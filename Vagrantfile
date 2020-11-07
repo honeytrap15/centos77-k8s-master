@@ -42,6 +42,7 @@ Vagrant.configure("2") do |config|
     yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
     yum -y update && yum -y install docker-ce
     systemctl enable --now docker
+    gpasswd -a vagrant docker
   SHELL
 
   # install k8s for master
